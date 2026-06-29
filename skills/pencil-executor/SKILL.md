@@ -22,7 +22,7 @@ allowed-tools:
 ### Pencil 兼容性约束
 5. **Pencil 桌面应用必须已运行**
 6. **创建 .pen 文件后先提示用户 Cmd+S 手动保存**
-7. **单次 batch_design 操作数 ≤ 25**
+7. **单次 batch_design 操作数 ≤ 15**
 8. **全部颜色使用 #RRGGBB 十六进制格式**
 9. **fontFamily 使用字符串字面量**
 10. **文件路径使用相对路径**
@@ -120,7 +120,7 @@ allowed-tools:
 - 在 .pen 文件内新增页面，命名为 `P{N}_{页面名}`
 
 #### 5.2 分批 batch_design 绘制
-- 拆解页面组件，每批 ≤ 25 个操作
+- 拆解页面组件，每批 ≤ 15 个操作
 - 引用 `ui-design-elements.md` 中的颜色、字体、间距等设计令牌
 - **绘制时严格遵守视觉质量约束**（见 Critical 约束 14-19）
 
