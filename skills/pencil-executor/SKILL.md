@@ -58,6 +58,15 @@ allowed-tools:
 
 ## 工作流程
 
+## 注意：何时调用 Pencil 执行 Skill（新增）
+
+此 `pencil-executor` Skill 仅在以下情况下被触发：
+
+- 用户在初始调用决策中明确同意进行原型设计（对于全新需求）；或
+- 用户指定了 `prototype/{task_name}` 并明确要求更新/维护现有 `.pen`（包括在原有 `.pen` 中新增页面或修改页面）。
+
+若上述条件未满足，agent 不应调用本 Skill，流程将在阶段2 停止或仅更新规格文档。
+
 ### Step 1：健康检查
 
 确认 Pencil MCP 可用，否则提示用户并停止。

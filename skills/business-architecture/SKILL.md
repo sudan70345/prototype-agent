@@ -19,6 +19,15 @@ allowed-tools:
 
 - 已获取 `task_name` 并创建 `prototype/{task_name}_{YYYYMMDD}/` 目录
 
+## 调用时的初始判定（新增）
+
+在启动业务架构沟通之前，Skill 必须确认调用上下文：
+
+- 如果没有提供现成的 `prototype/{task_name}` 目录（视为全新需求），应先提示 agent 向用户确认是否需要在本次流程中一并完成原型设计（Pencil 流程）。
+- 如果提供了 `prototype/{task_name}`，则先读取该目录内容并在与用户确认后决定是否继续进行维护/更新或直接进入逐页沟通。
+
+本判定结果将决定是否在后续阶段触发 `skills/pencil-executor`（仅在用户同意进行原型设计或明确要求更新已存在 `.pen` 时才触发）。
+
 ## 输出
 
 - `prototype/{task_name}_{YYYYMMDD}/01-business-architecture.md`
